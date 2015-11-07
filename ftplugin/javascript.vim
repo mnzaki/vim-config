@@ -1,0 +1,4 @@
+UltiSnipsAddFiletypes javascript-angular
+UltiSnipsAddFiletypes javascript-node
+UltiSnipsAddFiletypes javascript-jasmine
+UltiSnipsAddFiletypes javascript-jsdoc
