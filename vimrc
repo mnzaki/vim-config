@@ -138,6 +138,14 @@ vmap <leader>tt <Plug>VimwikiToggleListItem
 " UltiSnip!
 " :(
 
+" Airline!
+" give me tabs and buffers!
+let g:airline#extensions#tabline#enabled = 1
+" highlight whitespace
+let g:airline#extensions#whitespace#enabled = 1
+" show me pretty symbols!
+let g:airline_powerline_fonts = 1
+
 " We all make mistakes
 command WQ wq
 command Wq wq
