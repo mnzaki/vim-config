@@ -53,31 +53,15 @@ set wildmenu
 " map <Leader> to ;
 let mapleader = ";"
 
-" buffer explorer - minibufexpl by fholgado
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-nnoremap <Leader>1 :1b<CR>
-nnoremap <Leader>2 :2b<CR>
-nnoremap <Leader>3 :3b<CR>
-nnoremap <Leader>4 :4b<CR>
-nnoremap <Leader>5 :5b<CR>
-nnoremap <Leader>6 :6b<CR>
-nnoremap <Leader>7 :7b<CR>
-nnoremap <Leader>8 :8b<CR>
-nnoremap <Leader>9 :9b<CR>
-nnoremap <Leader>0 :10b<CR>
+" buffer management
 nnoremap <Leader>x :bd<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
-nnoremap <Leader>r :CtrlPClearAllCaches<CR>
-
 
 " pan
 set sidescroll=1
 "set nowrap
-set listchars=tab:▸\ ,trail:~,extends:▸,precedes:◂
-set list
+"set listchars=tab:▸\ ,trail:~,extends:▸,precedes:◂
+"set list
 
 noremap <Up> 5<C-y>
 noremap <Down> 5<C-e>
@@ -118,31 +102,20 @@ set foldlevelstart=2
 let g:user_zen_expandabbr_key = '<c-y>'
 let g:use_zen_complete_tag = 1
 
-" Gundo!
-nnoremap <F5> :GundoToggle<CR>
-nnoremap <F6> :TlistToggle<CR>
-
 " NERDTree!
-nnoremap <F2> :NERDTree<CR>
+nnoremap <F2> :NERDTreeFocus<CR>
+nnoremap <F3> :NERDTreeFind<CR>
 " start automatically if no file mentioned on the command line
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " CtrlP
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_open_multiple_files = '2jvr'
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/venv/*
 set wildignore+=*/node_modules/*,*/.meteor/local/*
+nnoremap <Leader>r :CtrlPClearAllCaches<CR>
 "let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn)$'
-
-
-" EasyTags
-let g:easytags_file = '~/.vim/tags'
-" A hack, instead of writing a function to find the project root.
-" 15 levels back.
-set tags=./vimtags;../vimtags;../../vimtags;../../../vimtags;../../../../vimtags;../../../../../vimtags;../../../../../../vimtags;../../../../../../../vimtags;../../../../../../../../vimtags;../../../../../../../../../vimtags;../../../../../../../../../../vimtags;../../../../../../../../../../../vimtags;../../../../../../../../../../../../vimtags;../../../../../../../../../../../../../vimtags;../../../../../../../../../../../../../../vimtags;../../../../../../../../../../../../../../../vimtags
-let g:easytags_dynamic_files = 1
 
 " VimWiki
 let wiki = {}
