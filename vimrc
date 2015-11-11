@@ -37,9 +37,13 @@ set showmatch
 "highlight WhitespaceEOL ctermbg=lightgray guibg=lightgray
 "match WhitespaceEOL /\s\+$/
 
+" map <Leader> to ;
+let mapleader = ";"
+
 " Search settings
 set hlsearch
 set incsearch
+nnoremap <Leader>/ :nohl<CR>
 
 " use wild menu for autocompletion
 set wildmenu
@@ -49,9 +53,6 @@ set wildmenu
 "set ofu=syntaxcomplete#Complete
 "set completeopt=menuone,longest,preview
 "let g:SuperTabDefaultCompletionType = "context"
-
-" map <Leader> to ;
-let mapleader = ";"
 
 " buffer management
 nnoremap <Leader>x :bd<CR>
