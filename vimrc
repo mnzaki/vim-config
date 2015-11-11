@@ -90,6 +90,14 @@ autocmd BufEnter *.css set et ts=2 sw=2
 autocmd BufEnter *.?rb set et ts=2 sw=2
 autocmd BufEnter *.py set et ts=4 sw=4
 
+" window title
+autocmd BufEnter * let &titlestring = "vim[" . expand("%:t") . "]"
+set t_ts=k
+set t_fs=\
+set title
+" but remove it when we leave..... don't be glitcheeehhhh
+auto VimLeave * :set t_ts=k\
+
 " Folding stuff
 " Width of the fold column on the left
 "set foldcolumn=1
