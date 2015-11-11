@@ -84,6 +84,7 @@ autocmd BufEnter * set et
 autocmd BufEnter ?akefile* set noet
 
 " Tab and space settings
+autocmd BufEnter *.js set et ts=2 sw=2
 autocmd BufEnter *.htm? set et ts=2 sw=2
 autocmd BufEnter *.css set et ts=2 sw=2
 autocmd BufEnter *.?rb set et ts=2 sw=2
