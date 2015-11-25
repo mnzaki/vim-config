@@ -58,6 +58,14 @@ set wildmenu
 nnoremap <Leader>x :bd<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 
+" window management
+nnoremap <C-m> :res 60<CR>:vertical res 90<CR>
+nnoremap <C-n> :res 1<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " pan
 set sidescroll=1
 "set nowrap
