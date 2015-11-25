@@ -133,6 +133,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " CtrlP
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_open_multiple_files = '2jvr'
+let g:ctrlp_jump_to_buffer = 2
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/venv/*
 set wildignore+=*/node_modules/*,*/.meteor/local/*
 nnoremap <Leader>r :CtrlPClearAllCaches<CR>
