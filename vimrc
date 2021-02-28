@@ -170,12 +170,15 @@ set foldlevelstart=2
 let g:user_zen_expandabbr_key = '<c-y>'
 let g:use_zen_complete_tag = 1
 
-" NERDTree!
-nnoremap <F2> :NERDTreeFocus<CR>
-nnoremap <F3> :NERDTreeFind<CR>
-" start automatically if no file mentioned on the command line
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" " NERDTree!
+" nnoremap <F2> :NERDTreeFocus<CR>
+" nnoremap <F3> :NERDTreeFind<CR>
+" nnoremap <F4> :NERDTreeClose<CR>
+"
+" " start automatically if no file mentioned on the command line
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTreeToggle | endif
+" let NERDTreeIgnore = ['\.pyc$']
 
 " CtrlP
 let g:ctrlp_clear_cache_on_exit = 1
@@ -183,7 +186,6 @@ let g:ctrlp_open_multiple_files = '2jvr'
 let g:ctrlp_jump_to_buffer = 2
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/venv/*
 set wildignore+=*/node_modules/*,*/.meteor/local/*
-nnoremap <Leader>r :CtrlPClearAllCaches<CR>
 "let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn)$'
 
 " VimWiki
@@ -234,3 +236,74 @@ function! <SID>StripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
+
+" for overtone
+nnoremap <Leader>; :Eval<CR>
+vnoremap <Leader>; :Eval<CR>
+nnoremap <Leader>' :Eval (stop)<CR>
+nnoremap <Leader>o :Eval (stop)<CR>:Eval<CR>
+nnoremap <Leader>e :Require<CR>
+" vnoremap e :Eval<CR>
+" K is already mapped for documentation
+
+noremap <F9> :TagbarToggle<CR>
+
+" YouCompleteMe
+" supercharged tag jump
+autocmd FileType rust nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType rust inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+autocmd FileType typescript nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType typescript inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+autocmd FileType typescriptreact nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType typescriptreact inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+autocmd FileType javascript nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType javascript inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+autocmd FileType java nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType java inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+autocmd FileType go nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType go inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+
+
+" some Ycm leader shortcuts
+nnoremap <Leader>f :YcmCompleter FixIt<CR>
+nnoremap <Leader>t :YcmCompleter GetType<CR>
+nnoremap <Leader>D :YcmDiags<CR>
+nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
+
+" YouCompleteMe and UltiSnips, you two play well together now
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
+
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+
+" load some snippets in the right files
+autocmd FileType django UltiSnipsAddFiletypes javascript-jasmine
+
+" supercharged GoTo
+map gD :YcmCompleter GoTo<CR>
+
+" Ag is the_silver_surfer
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
+
+" Typescript stuff
+" use async calls for tsserver
+" let g:tsuquyomi_use_vimproc = 0
+" let g:tsuquyomi_baseurl_import_path = 1
+
+" Rust stuff
+" let g:rustfmt_autosave = 1
+
+let g:prettier#config#semi = 'false'
+let g:prettier#config#config_precedence = 'cli-override'
