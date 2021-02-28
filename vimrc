@@ -3,32 +3,32 @@
 call plug#begin('~/.vim/bundle')
 " Make sure you use single quotes in plugin names
 " Lazy loading FTW
-Plug 'mileszs/ack.vim.git'
-Plug 'kien/ctrlp.vim.git'
-Plug 'ycm-core/YouCompleteMe.git', { 'on': 'YcmCompleter' }
-" Plug 'tweekmonster/django-plus.vim.git'
-Plug 'scrooloose/nerdcommenter.git'
-" Plug 'scrooloose/nerdtree.git'
-Plug 'tpope/vim-vinegar.git'
-" Plug 'edkolev/tmuxline.vim.git'
+Plug 'mileszs/ack.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'ycm-core/YouCompleteMe', { 'on': 'YcmCompleter' }
+" Plug 'tweekmonster/django-plus.vim'
+Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-vinegar'
+" Plug 'edkolev/tmuxline.vim'
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets.git'
-Plug 'vim-airline/vim-airline.git'
-Plug 'vim-airline/vim-airline-themes.git'
-Plug 'tpope/vim-fugitive.git'
-Plug 'tpope/vim-sensible.git'
-Plug 'tpope/vim-surround.git'
+Plug 'honza/vim-snippets'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
 "Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-"Plug 'tpope/vim-classpath.git', { 'for': 'clojure' }
-"Plug 'guns/vim-clojure-static.git', { 'for': 'clojure' }
-Plug 'pangloss/vim-javascript.git', { 'for': 'javascript' }
-"Plug 'kchmck/vim-coffee-script.git'
-Plug 'othree/html5.vim.git', { 'for': 'html' }
-Plug 'posva/vim-vue.git', { 'for': 'vue' }
-" Plug 'Quramy/tsuquyomi.git', { 'for': 'typescript' }
-Plug 'tommcdo/vim-kangaroo.git'
-Plug 'leafgarland/typescript-vim.git', { 'for': 'typescript' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+"Plug 'tpope/vim-classpath', { 'for': 'clojure' }
+"Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+"Plug 'kchmck/vim-coffee-script'
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'posva/vim-vue', { 'for': 'vue' }
+" Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+Plug 'tommcdo/vim-kangaroo'
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'rust-lang/rust', { 'for': 'rust' }
 
 " Music stuff
 Plug 'supercollider/scvim', { 'for': 'supercollider' }
