@@ -98,8 +98,8 @@ nnoremap <Leader>X :bufdo bd<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 
 " window management
-nnoremap <C-m> :res 60<CR>:vertical res 90<CR>
-nnoremap <C-n> :res 1<CR>
+"nnoremap <C-m> :res 60<CR>:vertical res 90<CR>
+"nnoremap <C-n> :res 1<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -123,6 +123,10 @@ noremap <Up> 5<C-y>
 noremap <Down> 5<C-e>
 noremap <Right> z5l
 noremap <Left> z5h
+
+" C-a and C-e like readline, while in insert mode
+inoremap <C-a> <Esc>I
+inoremap <C-e> <Esc>A
 
 " auto indent
 set smartindent
@@ -157,6 +161,12 @@ auto VimLeave * :set t_ts=k\
 " tmux knows the extended mouse mode
 set ttymouse=xterm2
 
+" make the quickfix window infinitely more useful
+" map :cn and :cp
+
+inoremap <C-9> <C-o>:cp<CR>
+nnoremap <C-9> :cp<CR>
+
 " Folding stuff
 " Width of the fold column on the left
 "set foldcolumn=1
@@ -165,6 +175,8 @@ set foldmethod=manual
 " foldlevelstart: 0 = all folds closed, 1 = some folds closed, 99 = all open
 set foldlevelstart=2
 
+set ignorecase
+set smartcase
 
 " Zen Coding
 let g:user_zen_expandabbr_key = '<c-y>'
@@ -210,12 +222,16 @@ vmap <leader>tt <Plug>VimwikiToggleListItem
 " :(
 
 " Airline!
+let g:airline_theme='powerlineish'
 " give me tabs and buffers!
 let g:airline#extensions#tabline#enabled = 1
 " highlight whitespace
 let g:airline#extensions#whitespace#enabled = 1
 " show me pretty symbols!
 let g:airline_powerline_fonts = 1
+" git branch is pretty useless, takes up space
+let g:airline_skip_empty_sections = 1
+let g:airline_section_b = ''
 
 " We all make mistakes
 command WQ wq
