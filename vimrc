@@ -94,6 +94,7 @@ set wildmenu
 
 " buffer management
 nnoremap <Leader>x :bd<CR>
+nnoremap <Leader>X :bufdo bd<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 
 " window management
@@ -103,6 +104,14 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" tab management
+execute "set <M-i>=\ei"
+execute "set <M-o>=\eo"
+nnoremap <M-i> :tabprevious<CR>
+nnoremap <M-o> :tabnext<CR>
+inoremap <M-i> <Esc>:tabprevious<CR>i
+inoremap <M-o> <Esc>:tabnext<CR>i
 
 " pan
 set sidescroll=1
