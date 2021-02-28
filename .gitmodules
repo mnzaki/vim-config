@@ -37,9 +37,6 @@
 [submodule "vim-plug"]
 	path = vim-plug
 	url = https://git::@github.com/junegunn/vim-plug.git
-[submodule "vim-pathogen.git"]
-  path = vim-pathogen.git
-  url = https://git::@github.com/tpope/vim-pathogen.git
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = https://git::@github.com/mileszs/ack.vim.git
