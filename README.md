@@ -1,5 +1,6 @@
 ## These are my twisted words
-This is my personal vim configuration, with pathogen as the plugin manager.  
+This is my personal vim configuration, with
+[vim-plug](https://github.com/junegunn/vim-plug) as the plugin manager.  
 It's been going through an overhaul and some things are broken.  
 
 Notably I'd like to add:
