@@ -40,3 +40,39 @@
 [submodule "vim-pathogen.git"]
   path = vim-pathogen.git
   url = git@github.com:tpope/vim-pathogen.git
+[submodule "bundle/ack.vim"]
+	path = bundle/ack.vim
+	url = git@github.com:mileszs/ack.vim.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
+[submodule "bundle/rust.vim"]
+	path = bundle/rust.vim
+	url = git@github.com:rust-lang/rust.vim
+[submodule "bundle/vim-vinegar"]
+	path = bundle/vim-vinegar
+	url = git@github.com:tpope/vim-vinegar.git
+[submodule "bundle/vim-vue"]
+	path = bundle/vim-vue
+	url = git@github.com:posva/vim-vue.git
+[submodule "bundle/typescript-vim"]
+	path = bundle/typescript-vim
+	url = git@github.com:leafgarland/typescript-vim.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/preservim/tagbar.git
+[submodule "bundle/vim-tidal"]
+	path = bundle/vim-tidal
+	url = https://github.com/tidalcycles/vim-tidal.git
+[submodule "bundle/vim-prettier"]
+	path = bundle/vim-prettier
+	url = https://github.com/prettier/vim-prettier.git
+[submodule "bundle/scvim"]
+	path = bundle/scvim
+	url = https://github.com/supercollider/scvim.git
+[submodule "bundle/vim-kangaroo"]
+	path = bundle/vim-kangaroo
+	url = git@github.com:tommcdo/vim-kangaroo.git
+[submodule "bundle/vim-airline-themes"]
+	path = bundle/vim-airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
