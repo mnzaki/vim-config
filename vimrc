@@ -3,32 +3,32 @@
 call plug#begin('~/.vim/bundle')
 " Make sure you use single quotes in plugin names
 " Lazy loading FTW
-Plug 'git@github.com:mileszs/ack.vim.git'
-Plug 'git@github.com:kien/ctrlp.vim.git'
-Plug 'git@github.com:ycm-core/YouCompleteMe.git', { 'on': 'YcmCompleter' }
-" Plug 'git@github.com:tweekmonster/django-plus.vim.git'
-Plug 'git@github.com:scrooloose/nerdcommenter.git'
-" Plug 'git@github.com:scrooloose/nerdtree.git'
-Plug 'git@github.com:tpope/vim-vinegar.git'
-" Plug 'git@github.com:edkolev/tmuxline.vim.git'
-Plug 'git@github.com:SirVer/ultisnips'
-Plug 'git@github.com:honza/vim-snippets.git'
-Plug 'git@github.com:vim-airline/vim-airline.git'
-Plug 'git@github.com:vim-airline/vim-airline-themes.git'
-Plug 'git@github.com:tpope/vim-fugitive.git'
-Plug 'git@github.com:tpope/vim-sensible.git'
-Plug 'git@github.com:tpope/vim-surround.git'
-"Plug 'git@github.com:tpope/vim-fireplace', { 'for': 'clojure' }
-"Plug 'git@github.com:tpope/vim-classpath.git', { 'for': 'clojure' }
-"Plug 'git@github.com:guns/vim-clojure-static.git', { 'for': 'clojure' }
-Plug 'git@github.com:pangloss/vim-javascript.git', { 'for': 'javascript' }
-"Plug git@github.com:'kchmck/vim-coffee-script.git'
-Plug 'git@github.com:othree/html5.vim.git', { 'for': 'html' }
-Plug 'git@github.com:posva/vim-vue.git', { 'for': 'vue' }
-" Plug 'git@github.com:Quramy/tsuquyomi.git', { 'for': 'typescript' }
-Plug 'git@github.com:tommcdo/vim-kangaroo.git'
-Plug 'git@github.com:leafgarland/typescript-vim.git', { 'for': 'typescript' }
-Plug 'git@github.com:rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'mileszs/ack.vim.git'
+Plug 'kien/ctrlp.vim.git'
+Plug 'ycm-core/YouCompleteMe.git', { 'on': 'YcmCompleter' }
+" Plug 'tweekmonster/django-plus.vim.git'
+Plug 'scrooloose/nerdcommenter.git'
+" Plug 'scrooloose/nerdtree.git'
+Plug 'tpope/vim-vinegar.git'
+" Plug 'edkolev/tmuxline.vim.git'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets.git'
+Plug 'vim-airline/vim-airline.git'
+Plug 'vim-airline/vim-airline-themes.git'
+Plug 'tpope/vim-fugitive.git'
+Plug 'tpope/vim-sensible.git'
+Plug 'tpope/vim-surround.git'
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+"Plug 'tpope/vim-classpath.git', { 'for': 'clojure' }
+"Plug 'guns/vim-clojure-static.git', { 'for': 'clojure' }
+Plug 'pangloss/vim-javascript.git', { 'for': 'javascript' }
+"Plug 'kchmck/vim-coffee-script.git'
+Plug 'othree/html5.vim.git', { 'for': 'html' }
+Plug 'posva/vim-vue.git', { 'for': 'vue' }
+" Plug 'Quramy/tsuquyomi.git', { 'for': 'typescript' }
+Plug 'tommcdo/vim-kangaroo.git'
+Plug 'leafgarland/typescript-vim.git', { 'for': 'typescript' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 " Music stuff
 Plug 'supercollider/scvim', { 'for': 'supercollider' }
