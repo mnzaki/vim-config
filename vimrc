@@ -110,6 +110,7 @@ execute "set <M-i>=\ei"
 execute "set <M-o>=\eo"
 nnoremap <M-i> :tabprevious<CR>
 nnoremap <M-o> :tabnext<CR>
+nnoremap <leader><M-o> :tabnew<CR>
 inoremap <M-i> <Esc>:tabprevious<CR>i
 inoremap <M-o> <Esc>:tabnext<CR>i
 
