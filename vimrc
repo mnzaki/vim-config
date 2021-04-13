@@ -274,6 +274,8 @@ autocmd FileType typescriptreact nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
 autocmd FileType typescriptreact inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
 autocmd FileType javascript nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
 autocmd FileType javascript inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+autocmd FileType javascriptreact nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType javascriptreact inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
 autocmd FileType java nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
 autocmd FileType java inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
 autocmd FileType go nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
@@ -322,4 +324,5 @@ cnoreabbrev AG Ack
 " let g:rustfmt_autosave = 1
 
 let g:prettier#config#semi = 'false'
-let g:prettier#config#config_precedence = 'cli-override'
+let g:prettier#config#singleQuote = 'true'
+" let g:prettier#config#config_precedence = 'cli-override'
