@@ -327,3 +327,7 @@ cnoreabbrev AG Ack
 let g:prettier#config#semi = 'false'
 let g:prettier#config#singleQuote = 'true'
 " let g:prettier#config#config_precedence = 'cli-override'
+
+" cut / copy / paste with no xterm-clipboard support
+vnoremap <Leader>y y:'<,'>w !xsel -b<CR><CR>
+nnoremap <Leader>p :r !xsel -b<CR>
