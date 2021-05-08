@@ -86,12 +86,6 @@ nnoremap <Leader>/ :nohl<CR>
 " use wild menu for autocompletion
 set wildmenu
 
-" tab completion
-" omni completion
-"set ofu=syntaxcomplete#Complete
-"set completeopt=menuone,longest,preview
-"let g:SuperTabDefaultCompletionType = "context"
-
 " buffer management
 nnoremap <Leader>x :bd<CR>
 nnoremap <Leader>X :bufdo bd<CR>
@@ -266,6 +260,9 @@ nnoremap <Leader>e :Require<CR>
 noremap <F9> :TagbarToggle<CR>
 
 " YouCompleteMe
+" popup instead of preview window, and always show menu
+set completeopt=menuone,longest,popup
+
 " supercharged tag jump
 autocmd FileType rust nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
 autocmd FileType rust inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
@@ -286,6 +283,7 @@ autocmd FileType go inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
 " some Ycm leader shortcuts
 nnoremap <Leader>f :YcmCompleter FixIt<CR>
 nnoremap <Leader>t :YcmCompleter GetType<CR>
+nnoremap <Leader>T :YcmCompleter GetDoc<CR>
 nnoremap <Leader>D :YcmDiags<CR>
 nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
 
