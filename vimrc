@@ -1,11 +1,15 @@
 " Plugins plugins plugins
 
 call plug#begin('~/.vim/bundle')
+Plug 'WolfgangMehner/bash-support'
 " Make sure you use single quotes in plugin names
 " Lazy loading FTW
 Plug 'mileszs/ack.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'ycm-core/YouCompleteMe', { 'on': 'YcmCompleter' }
+
+" Plug 'ycm-core/YouCompleteMe', { 'on': 'YcmCompleter' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Plug 'tweekmonster/django-plus.vim'
 Plug 'scrooloose/nerdcommenter'
 " Plug 'scrooloose/nerdtree'
@@ -265,53 +269,56 @@ nnoremap <Leader>e :Require<CR>
 
 noremap <F9> :TagbarToggle<CR>
 
-" YouCompleteMe
+" YouCompleteMe [turned off in favor of coc]
 " popup instead of preview window, and always show menu
-set completeopt=menuone,longest,popup
-
-" supercharged tag jump
-autocmd FileType rust nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-autocmd FileType rust inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-autocmd FileType typescript nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-autocmd FileType typescript inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-autocmd FileType typescriptreact nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-autocmd FileType typescriptreact inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-autocmd FileType javascript nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-autocmd FileType javascript inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-autocmd FileType javascriptreact nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-autocmd FileType javascriptreact inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-autocmd FileType java nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-autocmd FileType java inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-autocmd FileType go nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-autocmd FileType go inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-
+" set completeopt=menuone,longest,popup
+"
+" let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+" let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+" let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+" let g:ycm_complete_in_comments = 1 " Completion in comments
+" let g:ycm_complete_in_strings = 1 " Completion in string
+"
+" let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+"
+" let g:ycm_confirm_extra_conf = 0
+"
+" " YouCompleteMe and UltiSnips, you two play well together now
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
 " some Ycm leader shortcuts
-nnoremap <Leader>f :YcmCompleter FixIt<CR>
-nnoremap <Leader>t :YcmCompleter GetType<CR>
-nnoremap <Leader>T :YcmCompleter GetDoc<CR>
-nnoremap <Leader>D :YcmDiags<CR>
-nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
+"nnoremap <Leader>f :YcmCompleter FixIt<CR>
+"nnoremap <Leader>t :YcmCompleter GetType<CR>
+"nnoremap <Leader>T :YcmCompleter GetDoc<CR>
+"nnoremap <Leader>D :YcmDiags<CR>
+"nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
 
-" YouCompleteMe and UltiSnips, you two play well together now
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+" supercharged GoTo
+" map gD :YcmCompleter GoTo<CR>
 
-let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
+" supercharged tag jump
+" autocmd FileType rust nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+" autocmd FileType rust inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+" autocmd FileType typescript nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+" autocmd FileType typescript inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+" autocmd FileType typescriptreact nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+" autocmd FileType typescriptreact inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+" autocmd FileType javascript nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+" autocmd FileType javascript inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+" autocmd FileType javascriptreact nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+" autocmd FileType javascriptreact inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+" autocmd FileType java nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+" autocmd FileType java inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
+" autocmd FileType go nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+" autocmd FileType go inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
 
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+
 
 " load some snippets in the right files
 autocmd FileType django UltiSnipsAddFiletypes javascript-jasmine
-
-" supercharged GoTo
-map gD :YcmCompleter GoTo<CR>
 
 " Ag is the_silver_surfer
 let g:ackprg = 'ag --vimgrep --smart-case'
@@ -332,6 +339,31 @@ let g:prettier#config#semi = 'false'
 let g:prettier#config#singleQuote = 'true'
 " let g:prettier#config#config_precedence = 'cli-override'
 
-" cut / copy / paste with no xterm-clipboard support
-vnoremap <Leader>y y:'<,'>w !xsel -b<CR><CR>
-nnoremap <Leader>p :r !xsel -b<CR>
+
+let g:tmux_navigator_insert_mode = 1
+
+
+" cut / yank/copy / paste with no xterm-clipboard support
+vnoremap <Leader>y :w !xsel -b<CR><CR>
+nnoremap <Leader>p :'<,'>r !xsel -b<CR>
+
+"-------------------------------------------------------------------------------
+" Bash-Support
+" the settings are documented here:
+"  :help bashsupport-custom-variables
+"-------------------------------------------------------------------------------
+"let g:BASH_LoadMenus  = 'yes'
+"let g:BASH_CreateMenusDelayed = 'no'
+"let g:BASH_RootMenu   = '&Bash'
+"let g:BASH_MapLeader  = '\'
+"let g:BASH_InsertFileHeader = 'no'
+"let g:BASH_OutputMethod = 'terminal'
+"let g:BASH_DirectRun    = 'yes'
+"let g:BASH_AlsoBash = [ '*.SlackBuild' , 'rc.*' ]
+
+
+" mnzakish/categorization
+" to tag current file :Tag public sometag
+command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'
+command -nargs=+ Tag Silent ~/.msh/categorization.sh tag % <q-args>
+command -nargs=+ Tagrm Silent ~/.msh/categorization.sh tagrm % <q-args>
