@@ -1,6 +1,3 @@
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/ycm-core/YouCompleteMe.git
 [submodule "bundle/ctrlp.vim"]
 	path = bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
@@ -73,3 +70,48 @@
 [submodule "bundle/vim-airline-themes"]
 	path = bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "bundle/awesomewm-vim-tmux-navigator"]
+	path = bundle/awesomewm-vim-tmux-navigator
+	url = https://github.com/intrntbrn/awesomewm-vim-tmux-navigator.git
+[submodule "bundle/bash-support"]
+	path = bundle/bash-support
+	url = https://github.com/WolfgangMehner/bash-support.git
+[submodule "bundle/coc.nvim"]
+	path = bundle/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule "bundle/django-plus.vim"]
+	path = bundle/django-plus.vim
+	url = git@github.com:tweekmonster/django-plus.vim.git
+[submodule "bundle/rust"]
+	path = bundle/rust
+	url = https://github.com/rust-lang/rust.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "bundle/taskwiki"]
+	path = bundle/taskwiki
+	url = https://github.com/tools-life/taskwiki.git
+[submodule "bundle/vim-classpath"]
+	path = bundle/vim-classpath
+	url = git@github.com:tpope/vim-classpath.git
+[submodule "bundle/vim-clojure-static"]
+	path = bundle/vim-clojure-static
+	url = git@github.com:guns/vim-clojure-static.git
+[submodule "bundle/vim-fireplace"]
+	path = bundle/vim-fireplace
+	url = git@github.com:tpope/vim-fireplace.git
+[submodule "bundle/vim-plugin-AnsiEsc"]
+	path = bundle/vim-plugin-AnsiEsc
+	url = https://github.com/powerman/vim-plugin-AnsiEsc.git
+[submodule "bundle/vim-rails"]
+	path = bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/vim-taskwarrior"]
+	path = bundle/vim-taskwarrior
+	url = https://github.com/farseer90718/vim-taskwarrior.git
+[submodule "bundle/vimwiki"]
+	path = bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git

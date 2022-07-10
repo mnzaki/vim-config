@@ -35,7 +35,7 @@ Plug 'posva/vim-vue', { 'for': 'vue' }
 " Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'tommcdo/vim-kangaroo'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'rust-lang/rust', { 'for': 'rust' }
+"Plug 'rust-lang/rust', { 'for': 'rust' }
 
 " Music stuff
 Plug 'supercollider/scvim', { 'for': 'supercollider' }
