@@ -79,8 +79,10 @@ set novb
 " make that backspace key work the way it should
 set backspace=indent,eol,start
 
-" backups go to /tmp
-set bdir=/tmp
+" backups, swap, undo
+set undodir=~/.vim/.undo//
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swp//
 
 " syntax highlighting on
 syntax on
