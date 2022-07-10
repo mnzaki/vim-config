@@ -43,6 +43,22 @@ Plug 'tidalcycles/vim-tidal', { 'for': 'tidal' }
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'preservim/tagbar', { 'on': 'TagbarToggle' }
 
+" Magic nav across awesome and vim and tmux
+Plug 'intrntbrn/awesomewm-vim-tmux-navigator'
+
+" Ruby on Rails
+"Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+
+
+" taskwiki stuff
+Plug 'tools-life/taskwiki'
+Plug 'vimwiki/vimwiki'
+" vim-plugin-AnsiEsc adds color support in charts.
+Plug 'powerman/vim-plugin-AnsiEsc'
+" vim-taskwarrior enables grid view.
+Plug 'farseer90718/vim-taskwarrior'
+
 call plug#end()
 
 " vi compatiblility is LAME
@@ -200,11 +216,15 @@ set wildignore+=*/node_modules/*,*/.meteor/local/*
 "let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn)$'
 
 " VimWiki
-let wiki = {}
-let wiki.path = '~/wiki/'
-let wiki.path_html = '~/wiki/html/'
-let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'c',
-                          \ 'ruby': 'ruby', 'perl': 'perl', 'sh': 'sh'}
+let wiki = {
+\ 'path': '~/pkb/',
+\ 'path_html': '~/text_files/wiki/html/',
+\ 'nested_syntaxes': {
+  \ 'python': 'python', 'c++': 'cpp', 'c': 'c',
+  \ 'ruby': 'ruby', 'perl': 'perl', 'sh': 'sh'
+\ },
+\ 'syntax': 'markdown', 'ext': '.md', 'auto_tags': 1 }
+
 let g:vimwiki_list = [wiki]
 nmap <leader>tt <Plug>VimwikiToggleListItem
 vmap <leader>tt <Plug>VimwikiToggleListItem
