@@ -10,14 +10,17 @@ Plug 'ycm-core/YouCompleteMe', { 'on': 'YcmCompleter' }
 Plug 'scrooloose/nerdcommenter'
 " Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-vinegar'
-" Plug 'edkolev/tmuxline.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
+
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+
 "Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 "Plug 'tpope/vim-classpath', { 'for': 'clojure' }
 "Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
@@ -46,9 +49,6 @@ set mouse=a
 set hidden
 filetype plugin on
 filetype plugin indent on
-
-set background=dark
-colorscheme xoria256_no_bg
 
 " make the last line where the status is two lines deep so you can see status always
 set laststatus=2
@@ -217,16 +217,22 @@ vmap <leader>tt <Plug>VimwikiToggleListItem
 " :(
 
 " Airline!
-let g:airline_theme='powerlineish'
+" let g:airline_theme='powerlineish'
+let g:airline_theme='distinguished'
 " give me tabs and buffers!
 let g:airline#extensions#tabline#enabled = 1
 " highlight whitespace
 let g:airline#extensions#whitespace#enabled = 1
 " show me pretty symbols!
 let g:airline_powerline_fonts = 1
+" don't tmuxline, I do it manually in .tmux.conf
+let g:airline#extensions#tmuxline#enabled = 0
 " git branch is pretty useless, takes up space
 let g:airline_skip_empty_sections = 1
 let g:airline_section_b = ''
+
+set background=dark
+colorscheme xoria256_no_bg
 
 " We all make mistakes
 command WQ wq

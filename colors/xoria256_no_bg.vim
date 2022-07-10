@@ -45,7 +45,7 @@ hi ErrorMsg     ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
 hi FoldColumn   ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
 hi Folded       ctermfg=255 guifg=#eeeeee ctermbg=60  guibg=#5f5f87
 hi IncSearch    ctermfg=0   guifg=#000000 ctermbg=223 guibg=#ffdfaf cterm=NONE gui=NONE
-hi LineNr       ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
+hi LineNr       ctermfg=247 guifg=#9e9e9e ctermbg=236 guibg=#121212
 hi MatchParen   ctermfg=188 guifg=#dfdfdf ctermbg=68  guibg=#5f87df cterm=bold gui=bold
 " TODO
 " hi MoreMsg
@@ -124,6 +124,11 @@ hi treeOpenable   ctermfg=150  guifg=#afdf87
 hi treePart       ctermfg=244  guifg=#808080
 hi treeDirSlash   ctermfg=244  guifg=#808080
 hi treeLink       ctermfg=182  guifg=#dfafdf
+""" Airline but this doesn't work
+"hi airline_b  ctermbg=NONE guibg=NONE
+"hi airline_a  ctermbg=NONE guibg=NONE
+hi airline_c  ctermbg=NONE guibg=NONE
+hi airline_tabfill ctermbg=NONE guibg=NONE
 
 """ VimDebug {{{3
 " FIXME
