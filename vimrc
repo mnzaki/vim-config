@@ -169,12 +169,15 @@ autocmd BufEnter *.py set et ts=4 sw=4
 
 " when inside the matrix
 " window title
-autocmd BufEnter * let &titlestring = "vim[" . expand("%:t") . "]"
-set t_ts=k
-set t_fs=\
 set title
+
+"set t_ts=k
+"set t_fs=\
+
+autocmd BufEnter * let &titlestring = "vim[" . expand("%:t") . "]"
 " but remove it when we leave..... don't be glitcheeehhhh
 auto VimLeave * :set t_ts=k\
+
 " tmux knows the extended mouse mode
 set ttymouse=xterm2
 
