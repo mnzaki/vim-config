@@ -1,19 +1,20 @@
 {
+  "dictionary": ["/usr/share/dict/british-english", "/usr/share/dict/german" ],
   "languageserver": {
     "dockerfile": {
       "command": "docker-langserver",
       "filetypes": ["dockerfile"],
       "args": ["--stdio"]
+    },
+    "godot": {
+      "host": "127.0.0.1",
+      "filetypes": ["gd", "gdscript3"],
+      "port": 6008
+    },
+    "graphql": {
+      "command": "graphql-lsp",
+      "args": ["server", "-m", "stream"],
+      "filetypes": ["typescript", "typescriptreact", "graphql"]
     }
-  },
-  "godot": {
-    "host": "127.0.0.1",
-    "filetypes": ["gd", "gdscript3"],
-    "port": 6008
-  },
-  "graphql": {
-    "command": "graphql-lsp",
-    "args": ["server", "-m", "stream"],
-    "filetypes": ["typescript", "typescriptreact", "graphql"]
   }
 }
