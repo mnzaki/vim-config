@@ -233,7 +233,7 @@ set wildignore+=*/node_modules/*,*/.meteor/local/*
 
 " VimWiki
 let wiki = {
-\ 'path': '~/pkb/',
+\ 'path': '~',
 \ 'path_html': '~/text_files/wiki/html/',
 \ 'nested_syntaxes': {
   \ 'python': 'python', 'c++': 'cpp', 'c': 'c',
