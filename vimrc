@@ -178,13 +178,16 @@ autocmd BufEnter *.py set et ts=4 sw=4
 " when inside the matrix
 " window title
 set title
+autocmd BufEnter * let &titlestring = expand("%:t")
+" but remove it when we leave..... don't be glitcheeehhhh
+execute "set titleold=".getcwd()
+" thanks https://vi.stackexchange.com/a/17913
 
 "set t_ts=k
 "set t_fs=\
 
-autocmd BufEnter * let &titlestring = "vim[" . expand("%:t") . "]"
-" but remove it when we leave..... don't be glitcheeehhhh
-auto VimLeave * :set t_ts=k\
+"auto VimLeave * :set t_ts=k\
+"auto VimLeave * :set notitle
 
 " tmux knows the extended mouse mode
 set ttymouse=xterm2
