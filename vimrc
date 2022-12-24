@@ -587,3 +587,7 @@ nnoremap <Leader>Y <S-v>:w !xsel -b<CR>:'<,'> d<CR><CR>
 command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'
 command -nargs=+ Tag Silent ~/.msh/categorization.sh tag % <q-args>
 command -nargs=+ Tagrm Silent ~/.msh/categorization.sh tagrm % <q-args>
+
+" mnzakish/bin/capture
+vnoremap <Leader>z :w !capture<CR><CR>
+
