@@ -557,9 +557,14 @@ let g:prettier#config#singleQuote = 'true'
 let g:tmux_navigator_insert_mode = 1
 
 
-" cut / yank/copy / paste with no xterm-clipboard support
+" yank/copy / paste with no xterm-clipboard support
 vnoremap <Leader>y :w !xsel -b<CR><CR>
-nnoremap <Leader>p :'<,'>r !xsel -b<CR>
+nnoremap <Leader>y <S-v>:w !xsel -b<CR><CR>
+vnoremap <Leader>p :r !xsel -b<CR>
+nnoremap <Leader>p :r !xsel -b<CR>
+" and cut as well
+vnoremap <Leader>Y :w !xsel -b<CR>:'<,'> d<CR><CR>
+nnoremap <Leader>Y <S-v>:w !xsel -b<CR>:'<,'> d<CR><CR>
 
 "-------------------------------------------------------------------------------
 " Bash-Support
