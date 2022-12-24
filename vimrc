@@ -5,10 +5,11 @@ Plug 'WolfgangMehner/bash-support'
 " Make sure you use single quotes in plugin names
 " Lazy loading FTW
 Plug 'mileszs/ack.vim'
-Plug 'kien/ctrlp.vim'
+"Plug 'kien/ctrlp.vim'
 
 " Plug 'ycm-core/YouCompleteMe', { 'on': 'YcmCompleter' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Plug 'tweekmonster/django-plus.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -99,6 +100,9 @@ set showmatch
 
 " map <Leader> to ;
 let mapleader = ";"
+" map <localLeader> to ,
+let maplocalleader = ","
+
 
 " Search settings
 set hlsearch
@@ -119,7 +123,9 @@ set shortmess+=c
 " buffer management
 nnoremap <Leader>x :bd<CR>
 nnoremap <Leader>X :bufdo bd<CR>
-nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
+nnoremap <Leader><Leader> :CocCommand fzf-preview.ProjectGrepRecall<CR>
+nnoremap <Leader>b :CocCommand fzf-preview.Buffers<CR>
 
 " window management
 "nnoremap <C-m> :res 60<CR>:vertical res 90<CR>
@@ -224,12 +230,13 @@ let g:use_zen_complete_tag = 1
 " let NERDTreeIgnore = ['\.pyc$']
 
 " CtrlP
-let g:ctrlp_clear_cache_on_exit = 1
-let g:ctrlp_open_multiple_files = '2jvr'
-let g:ctrlp_jump_to_buffer = 2
+"let g:ctrlp_clear_cache_on_exit = 1
+"let g:ctrlp_open_multiple_files = '2jvr'
+"let g:ctrlp_jump_to_buffer = 2
+"let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn)$'
+"
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/venv/*
 set wildignore+=*/node_modules/*,*/.meteor/local/*
-"let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn)$'
 
 " VimWiki
 let wiki = {
