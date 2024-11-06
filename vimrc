@@ -11,6 +11,7 @@ exec 'source ~/.vim/profile/' . vim_profile . '.vim'
 
 " coc configuration moved to ide.vim profile
 
+source $MSH_DIR/vim/nested.vim
 
 " vi compatiblility is LAME
 set nocompatible
@@ -273,6 +274,8 @@ nnoremap <Leader>p :r !xsel -b<CR>
 " and cut as well
 vnoremap <Leader>Y :w !xsel -b<CR>:'<,'> d<CR><CR>
 nnoremap <Leader>Y <S-v>:w !xsel -b<CR>:'<,'> d<CR><CR>
+command -nargs=1 NeuralToTypescript :exe "echo 'code in typescript using importas "  . <q-args> . "\n'"
+vnoremap <Leader>n :delete<CR>:NeuralToTypescript @"<CR>
 
 "-------------------------------------------------------------------------------
 " Bash-Support
@@ -306,10 +309,19 @@ let g:tidal_sc_enable = 1
 let g:tidal_sc_boot_fallback = "~/pkb/tidal/boot.sc"
 
 """"""" AI
-
 " Codeium.com
 let g:codeium_disable_bindings = 1
 imap <script><silent><nowait><expr> <C-]> codeium#Accept()
 imap <C-;>   <Cmd>call codeium#CycleCompletions(1)<CR>
 imap <C-,>   <Cmd>call codeium#CycleCompletions(-1)<CR>
 imap <C-x>   <Cmd>call codeium#Clear()<CR>
+
+" Function to source only if file exists {
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+" }
+
+call SourceIfExists("~/.vimrc.secrets")
