@@ -283,6 +283,8 @@ let g:airline_section_b = ''
 
 set background=dark
 colorscheme xoria256_no_bg
+" Fix for floating panels color
+hi NormalFloat guibg=#222222
 
 " We all make mistakes
 command WQ wq
