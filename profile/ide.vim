@@ -68,15 +68,37 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+" unicode characters in the file autoload/float.vim
+set encoding=utf-8
+
 "
 " CoC: Conquer of Code
 
 " still using the old school .vim
 let g:coc_config_home = expand('~/.vim')
-
-"
-" unicode characters in the file autoload/float.vim
-set encoding=utf-8
+" and keep our extension list manually for easy moving around
+let g:coc_global_extensions = [
+  \'coc-clangd',
+  \'coc-cmake',
+  \'coc-dictionary',
+  \'coc-fzf-preview',
+  \'coc-go',
+  \'coc-html',
+  \'coc-java',
+  \'coc-json',
+  \'coc-markdownlint',
+  \'coc-pyright',
+  \'coc-rust-analyzer',
+  \'coc-sh',
+  \'coc-snippets',
+  \'coc-syntax',
+  \'coc-tsserver',
+  \'coc-ultisnips',
+  \'coc-vetur',
+  \'coc-elixir',
+  \'coc-prettier',
+  \'coc-eslint'
+\]
 
 nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
 nnoremap <Leader>g :CocCommand fzf-preview.ProjectGrepRecall<CR>
