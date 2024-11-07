@@ -76,3 +76,21 @@
 [submodule "bundle/fzf"]
 	path = bundle/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "bundle/calendar.vim"]
+	path = bundle/calendar.vim
+	url = https://github.com/itchyny/calendar.vim.git
+[submodule "bundle/neural"]
+	path = bundle/neural
+	url = https://github.com/dense-analysis/neural.git
+[submodule "bundle/nui.nvim"]
+	path = bundle/nui.nvim
+	url = https://github.com/muniftanjim/nui.nvim.git
+[submodule "bundle/significant.nvim"]
+	path = bundle/significant.nvim
+	url = https://github.com/elpiloto/significant.nvim.git
+[submodule "bundle/vim-obsession"]
+	path = bundle/vim-obsession
+	url = https://github.com/tpope/vim-obsession.git
+[submodule "bundle/vim-startuptime"]
+	path = bundle/vim-startuptime
+	url = https://github.com/dstein64/vim-startuptime.git
