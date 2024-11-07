@@ -3,16 +3,11 @@ Plug 'WolfgangMehner/bash-support'
 " Make sure you use single quotes in plugin names
 " Lazy loading FTW
 Plug 'mileszs/ack.vim'
-"Plug 'kien/ctrlp.vim'
 
-" Plug 'ycm-core/YouCompleteMe', { 'on': 'YcmCompleter' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-" Plug 'tweekmonster/django-plus.vim'
 Plug 'scrooloose/nerdcommenter'
-" Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-vinegar'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -26,31 +21,13 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
 
-"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-"Plug 'tpope/vim-classpath', { 'for': 'clojure' }
-"Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-"Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-"Plug 'kchmck/vim-coffee-script'
-"Plug 'othree/html5.vim', { 'for': 'html' }
-"Plug 'posva/vim-vue', { 'for': 'vue' }
-" Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
-"Plug 'tommcdo/vim-kangaroo'
-"Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-"Plug 'rust-lang/rust', { 'for': 'rust' }
-
 " Music stuff
 Plug 'supercollider/scvim', { 'for': 'supercollider' }
 Plug 'tidalcycles/vim-tidal', { 'for': 'tidal' }
-"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'preservim/tagbar', { 'on': 'TagbarToggle' }
 
 " Magic nav across awesome and vim and tmux
 Plug 'intrntbrn/awesomewm-vim-tmux-navigator'
-
-" Ruby on Rails
-"Plug 'vim-ruby/vim-ruby'
-"Plug 'tpope/vim-rails'
-
 
 " taskwiki stuff
 Plug 'tools-life/taskwiki', { 'for': 'markdown' }
@@ -69,9 +46,6 @@ Plug 'farseer90718/vim-taskwarrior', { 'for': 'markdown' }
 Plug 'Exafunction/codeium.vim' " it's own thing, https://codeium.com/vim_tutorial
 
 "Plug 'dstein64/vim-startuptime'
-
-" Elixir
-" Plug 'elixir-editors/vim-elixir'
 
 " TreeSitter for better syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -268,58 +242,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
-
-"
-" YouCompleteMe [turned off in favor of coc]
-"
-
-" popup instead of preview window, and always show menu
-" set completeopt=menuone,longest,popup
-"
-" let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-" let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-" let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-" let g:ycm_complete_in_comments = 1 " Completion in comments
-" let g:ycm_complete_in_strings = 1 " Completion in string
-"
-" let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-"
-" let g:ycm_confirm_extra_conf = 0
-"
-" " YouCompleteMe and UltiSnips, you two play well together now
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
-
-" some Ycm Leader shortcuts
-"nnoremap <Leader>f :YcmCompleter FixIt<CR>
-"nnoremap <Leader>t :YcmCompleter GetType<CR>
-"nnoremap <Leader>T :YcmCompleter GetDoc<CR>
-"nnoremap <Leader>D :YcmDiags<CR>
-"nnoremap <Leader>r :YcmCompleter GoToReferences<CR>
-
-" supercharged GoTo
-" map gD :YcmCompleter GoTo<CR>
-
-" supercharged tag jump
-" autocmd FileType rust nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-" autocmd FileType rust inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-" autocmd FileType typescript nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-" autocmd FileType typescript inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-" autocmd FileType typescriptreact nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-" autocmd FileType typescriptreact inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-" autocmd FileType javascript nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-" autocmd FileType javascript inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-" autocmd FileType javascriptreact nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-" autocmd FileType javascriptreact inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-" autocmd FileType java nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-" autocmd FileType java inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-" autocmd FileType go nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
-" autocmd FileType go inoremap <buffer> <C-]> <Esc>:YcmCompleter GoTo<CR>
-
-
 
 " load some snippets in the right files
 autocmd FileType django UltiSnipsAddFiletypes javascript-jasmine
