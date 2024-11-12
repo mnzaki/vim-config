@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
 
 " Music stuff
 Plug 'supercollider/scvim', { 'for': 'supercollider' }
@@ -70,6 +71,9 @@ EOF
 
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
+
+" automatic vim sessions based on current directory and also git branch
+let g:prosession_per_branch = 1
 
 "
 " CoC: Conquer of Code

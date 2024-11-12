@@ -22,6 +22,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
 
 "Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 "Plug 'tpope/vim-classpath', { 'for': 'clojure' }

@@ -94,3 +94,6 @@
 [submodule "bundle/vim-startuptime"]
 	path = bundle/vim-startuptime
 	url = https://github.com/dstein64/vim-startuptime.git
+[submodule "bundle/vim-prosession"]
+	path = bundle/vim-prosession
+	url = https://github.com/dhruvasagar/vim-prosession.git
