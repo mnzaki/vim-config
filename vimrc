@@ -35,6 +35,9 @@ set backspace=indent,eol,start
 set undodir=~/.vim/.undo//
 set backupdir=~/.vim/.backup//
 set directory=~/.vim/.swp//
+" persistent undo
+set undofile
+set undolevels=2000
 
 " syntax highlighting on
 syntax on
