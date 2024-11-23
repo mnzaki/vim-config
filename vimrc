@@ -259,20 +259,16 @@ nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 
 noremap <F9> :TagbarToggle<CR>
 
-
 let g:tmux_navigator_insert_mode = 1
 
-
 " yank/copy / paste with no xterm-clipboard support
-vnoremap <Leader>y :w !xsel -b<CR><CR>
-nnoremap <Leader>y <S-v>:w !xsel -b<CR><CR>
-vnoremap <Leader>p :r !xsel -b<CR>
-nnoremap <Leader>p :r !xsel -b<CR>
+vnoremap <silent> <Leader>y y:new ~/.vim/.yank<CR>VGp:w !xclip -rmlastnl -selection clipboard<CR><CR>:bdelete!<CR>
+nnoremap <silent> <Leader>y yy:w !xclip -rmlastnl -selection clipboard<CR><CR>
+vnoremap <silent> <Leader>p :r !xclip -o -selection clipboard<CR>
+nnoremap <silent> <Leader>p :r !xclip -o -selection clipboard<CR>
 " and cut as well
-vnoremap <Leader>Y :w !xsel -b<CR>:'<,'> d<CR><CR>
-nnoremap <Leader>Y <S-v>:w !xsel -b<CR>:'<,'> d<CR><CR>
-command -nargs=1 NeuralToTypescript :exe "echo 'code in typescript using importas "  . <q-args> . "\n'"
-vnoremap <Leader>n :delete<CR>:NeuralToTypescript @"<CR>
+vnoremap <silent> <Leader>Y d:new ~/.vim/.yank<CR>VGp:w !xclip -rmlastnl -selection clipboard<CR><CR>:bdelete!<CR>
+nnoremap <silent> <Leader>Y dd:new ~/.vim/.yank<CR>VGp:w !xclip -rmlastnl -selection clipboard<CR><CR>:bdelete!<CR>
 
 "-------------------------------------------------------------------------------
 " Bash-Support
@@ -306,6 +302,9 @@ let g:tidal_sc_enable = 1
 let g:tidal_sc_boot_fallback = "~/pkb/tidal/boot.sc"
 
 """"""" AI
+command -nargs=1 NeuralToTypescript :exe "echo 'code in typescript using importas "  . <q-args> . "\n'"
+vnoremap <Leader>n :delete<CR>:NeuralToTypescript @"<CR>
+
 " Codeium.com
 let g:codeium_disable_bindings = 1
 imap <script><silent><nowait><expr> <C-]> codeium#Accept()
