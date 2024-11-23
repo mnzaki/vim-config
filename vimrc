@@ -174,12 +174,6 @@ let g:use_zen_complete_tag = 1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTreeToggle | endif
 " let NERDTreeIgnore = ['\.pyc$']
 
-" CtrlP
-"let g:ctrlp_clear_cache_on_exit = 1
-"let g:ctrlp_open_multiple_files = '2jvr'
-"let g:ctrlp_jump_to_buffer = 2
-"let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn)$'
-"
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/venv/*
 set wildignore+=*/node_modules/*,*/.meteor/local/*
 

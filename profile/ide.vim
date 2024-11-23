@@ -104,9 +104,10 @@ let g:coc_global_extensions = [
   \'coc-eslint'
 \]
 
-nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
-nnoremap <Leader>g :CocCommand fzf-preview.ProjectGrepRecall<CR>
-nnoremap <Leader>b :CocCommand fzf-preview.Buffers<CR>
+nnoremap <silent> <C-p> :CocCommand fzf-preview.FromResources project_mru git<CR>
+nnoremap <Leader>s :CocCommand fzf-preview.ProjectGrepRecall<Space>
+nnoremap <silent> <Leader>g :CocCommand fzf-preview.GitActions<CR>
+nnoremap <silent> <Leader>b :CocCommand fzf-preview.Buffers<CR>
 
 " From coc-snippet
 " Use <C-l> for trigger snippet expand.
