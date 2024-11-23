@@ -53,7 +53,10 @@ set showmatch
 " Search settings
 set hlsearch
 set incsearch
+set ignorecase
+set smartcase
 nnoremap <Leader>/ :nohl<CR>
+nmap <expr> M ':%s/' . @/ . '//g<LEFT><LEFT>'
 
 " use wild menu for autocompletion
 set wildmenu
@@ -110,7 +113,7 @@ let g:html_indent_inctags = "html,body,head,tbody,div,script"
 
 " Expand tab to space
 set expandtab
-" Tabs should be four spaces in general
+" Tabs should be 2 spaces in general
 set tabstop=2
 set shiftwidth=2
 set textwidth=80
@@ -156,9 +159,6 @@ nnoremap <C-9> :cp<CR>
 set foldmethod=syntax
 " foldlevelstart: 0 = all folds closed, 1 = some folds closed, 99 = all open
 set foldlevelstart=99
-
-set ignorecase
-set smartcase
 
 " Zen Coding
 let g:user_zen_expandabbr_key = '<c-y>'
