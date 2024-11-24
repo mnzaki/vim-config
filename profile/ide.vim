@@ -105,7 +105,8 @@ let g:coc_global_extensions = [
 \]
 
 nnoremap <silent> <C-p> :CocCommand fzf-preview.FromResources project_mru git<CR>
-nnoremap <Leader>s :CocCommand fzf-preview.ProjectGrepRecall<Space>
+nnoremap <Leader>s :CocCommand fzf-preview.ProjectGrep<Space>
+nnoremap <Leader>S :CocCommand fzf-preview.ProjectGrepRecall<CR>
 nnoremap <silent> <Leader>g :CocCommand fzf-preview.GitActions<CR>
 nnoremap <silent> <Leader>b :CocCommand fzf-preview.Buffers<CR>
 
