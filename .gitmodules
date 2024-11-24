@@ -97,3 +97,6 @@
 [submodule "bundle/vim-prosession"]
 	path = bundle/vim-prosession
 	url = https://github.com/dhruvasagar/vim-prosession.git
+[submodule "bundle/vim-repeat"]
+	path = bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat

@@ -28,7 +28,7 @@ set laststatus=2
 " no bell, please
 set novb
 
-" make that backspace key work the way it should
+" make that backspace key works the way it should
 set backspace=indent,eol,start
 
 " backups, swap, undo
