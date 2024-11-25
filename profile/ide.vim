@@ -51,6 +51,7 @@ Plug 'Exafunction/codeium.vim' " it's own thing, https://codeium.com/vim_tutoria
 
 " TreeSitter for better syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
 
 call plug#end()
 
@@ -59,16 +60,25 @@ call plug#end()
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
-      "eex",
-      "elixir",
-      "erlang",
-      "heex",
+      "desktop",
+      "dockerfile",
+      "typescript",
+      "tsx",
+      "javascript",
+      "jsdoc",
+      "json",
+      "python",
       "html",
-      "surface",
+      "css",
   },
   highlight = {enable = true},
 }
 EOF
+" treesitter-context highlighting
+autocmd FocusLost * :hi TreesitterContext guibg=none
+autocmd FocusGained * :hi link TreesitterContext NormalFloat
+" this next one needs to be on VimEnter or it doesn't work
+autocmd VimEnter * :hi TreesitterContextBottom gui=underline guisp=Grey
 
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
