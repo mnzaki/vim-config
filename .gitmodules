@@ -103,3 +103,9 @@
 [submodule "bundle/nvim-treesitter-context"]
 	path = bundle/nvim-treesitter-context
 	url = https://github.com/nvim-treesitter/nvim-treesitter-context
+[submodule "bundle/vim-bbye"]
+	path = bundle/vim-bbye
+	url = https://github.com/moll/vim-bbye.git
+[submodule "bundle/vim-rhubarb"]
+	path = bundle/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
