@@ -73,8 +73,9 @@ set signcolumn=number
 set shortmess+=c
 
 " buffer management
-nnoremap <Leader>x :bd<CR>
-nnoremap <Leader>X :bufdo bd<CR>
+" :Bdelete from vim-bbye doesn't close windows
+nnoremap <Leader>x :Bdelete<CR>
+nnoremap <Leader>X :bd<CR>
 
 " window management
 "nnoremap <C-m> :res 60<CR>:vertical res 90<CR>

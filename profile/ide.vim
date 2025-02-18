@@ -16,8 +16,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 
+Plug 'moll/vim-bbye' " :Bdelete without closing windows/splits
+Plug 'tpope/vim-fugitive' " :G(it)
+Plug 'tpope/vim-rhubarb' " :GBrowse to open in github
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
