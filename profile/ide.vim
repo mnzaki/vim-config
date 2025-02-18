@@ -57,26 +57,34 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 
 call plug#end()
 
-" TreeSitter config, for elixir phoenix highlighting
 " this is neovim specific
 lua <<EOF
+-- TreeSitter config, mostly just for supporting nvim-treesitter-context
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
       "desktop",
       "dockerfile",
       "typescript",
-      "tsx",
       "javascript",
       "jsdoc",
+      "comment",
       "json",
       "python",
       "html",
       "css",
   },
-  highlight = {enable = true},
+  --highlight = {enable = true},
+}
+require'treesitter-context'.setup{
+  max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+  multiline_threshold = 10, -- Maximum number of lines to show for a single context
+  trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+  mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
 }
 EOF
-" treesitter-context highlighting
+
+" nvim-treesitter-context highlighting
+hi TreesitterContextLineNumber gui=none guifg=#777777
 autocmd FocusLost * :hi TreesitterContext guibg=none
 autocmd FocusGained * :hi link TreesitterContext NormalFloat
 " this next one needs to be on VimEnter or it doesn't work
@@ -305,4 +313,3 @@ cnoreabbrev AG Ack
 let g:prettier#config#semi = 'false'
 let g:prettier#config#singleQuote = 'true'
 " let g:prettier#config#config_precedence = 'cli-override'
-

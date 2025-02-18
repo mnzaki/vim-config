@@ -92,9 +92,11 @@ nnoremap <Leader>X :bd<CR>
 " execute "set <M-o>=\eo"
 nnoremap <M-i> :tabprevious<CR>
 nnoremap <M-o> :tabnext<CR>
+nnoremap <M-p> :tabnew<CR>
 nnoremap <Leader><M-o> :tabnew<CR>
 inoremap <M-i> <Esc>:tabprevious<CR>i
 inoremap <M-o> <Esc>:tabnext<CR>i
+inoremap <M-p> <Esc>:tabnew<CR>i
 
 " pan
 set sidescroll=1
@@ -223,11 +225,21 @@ let g:airline#extensions#tmuxline#enabled = 0
 " git branch is pretty useless, takes up space
 let g:airline_skip_empty_sections = 1
 let g:airline_section_b = ''
+" disable codeium extension, it slows down everything for some reason
+let g:airline#extensions#codeium#enabled = 0
+" enable highlighting cache for a smoother experience
+let g:airline_highlighting_cache = 1
 
+" Color me timbers
 set background=dark
 colorscheme xoria256_no_bg
 " Fix for floating panels color
 hi NormalFloat guibg=#222222
+" Fix vimdiff colors
+hi DiffAdd guibg=#004a00 gui=bold
+hi DiffDelete guibg=#ba0000 gui=bold
+hi DiffChange guibg=#003000 gui=bold
+hi DiffText guibg=#006a00 gui=bold
 
 " We all make mistakes
 command WQ wq
@@ -303,15 +315,15 @@ let g:tidal_sc_enable = 1
 let g:tidal_sc_boot_fallback = "~/pkb/tidal/boot.sc"
 
 """"""" AI
-command -nargs=1 NeuralToTypescript :exe "echo 'code in typescript using importas "  . <q-args> . "\n'"
+command -nargs=1 NeuralToTypescript :exe "echo 'code in typescript using imports "  . <q-args> . "\n'"
 vnoremap <Leader>n :delete<CR>:NeuralToTypescript @"<CR>
 
 " Codeium.com
 let g:codeium_disable_bindings = 1
 imap <script><silent><nowait><expr> <C-]> codeium#Accept()
-imap <C-;>   <Cmd>call codeium#CycleCompletions(1)<CR>
-imap <C-,>   <Cmd>call codeium#CycleCompletions(-1)<CR>
-imap <C-x>   <Cmd>call codeium#Clear()<CR>
+inoremap <C-PageDown>   <Cmd>call codeium#CycleCompletions(1)<CR>
+inoremap <C-PageUp>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+" imap <C-/>   <Cmd>call codeium#Clear()<CR>
 
 " Function to source only if file exists {
 function! SourceIfExists(file)
