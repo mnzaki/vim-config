@@ -109,3 +109,6 @@
 [submodule "bundle/vim-rhubarb"]
 	path = bundle/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
+[submodule "bundle/vim-svelte-plugin"]
+	path = bundle/vim-svelte-plugin
+	url = https://github.com/leafOfTree/vim-svelte-plugin.git

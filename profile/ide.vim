@@ -55,12 +55,14 @@ Plug 'Exafunction/codeium.vim' " it's own thing, https://codeium.com/vim_tutoria
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
 
+Plug 'leafOfTree/vim-svelte-plugin', { 'for': 'svelte' }
+
 call plug#end()
 
 " this is neovim specific
 lua <<EOF
 -- TreeSitter config, mostly just for supporting nvim-treesitter-context
-require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter'.setup {
   ensure_installed = {
       "desktop",
       "dockerfile",

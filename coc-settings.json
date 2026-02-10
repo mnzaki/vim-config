@@ -12,5 +12,10 @@
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "tsserver.useLocalTsdk": true,
   "eslint.autoFixOnSave": true,
-  "eslint.run": "onSave"
+  "eslint.run": "onSave",
+  "snippets.ultisnips.pythonPrompt": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "svelte.enable-ts-plugin": true
 }
