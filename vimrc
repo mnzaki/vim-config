@@ -137,18 +137,69 @@ autocmd BufEnter *.py set et ts=4 sw=4
 
 " when inside the matrix
 " window title
-set title
-autocmd BufEnter * let &titlestring = expand("%:~:h:t ") . "/" . expand("%:t")
+if has ("title")
+  " if there is no &t_ts sequence, is the terminal type known?
+  if &t_ts == "" && ( &term == "screen" || &term == "xterm" || &term == "xterm-256color" )
+    " add the missing control sequence for xterm or screen
+    let &t_ts = "\e]2;"
+  endif
+endif
+
+" set title
+"autocmd BufEnter * let &titlestring = expand("%:~:h:t ") . "/" . expand("%:t")
 " but remove it when we leave..... don't be glitcheeehhhh
 "execute "set titleold=".getcwd()
 " thanks https://vi.stackexchange.com/a/17913
-augroup tmux
-  autocmd!
-  if exists('$TMUX')
-    autocmd BufReadPost,FileReadPost,BufNewFile,FocusGained * call system("tmux rename-window " . expand("%:t"))
-    autocmd VimLeave,FocusLost * call system("tmux set-window-option automatic-rename")
-  endif
-augroup END
+
+if exists('$TMUX')
+  " Functions for tmux window renaming on focus events
+  function s:TmuxGrabState()
+    let g:tmux_title_was_auto = system("tmux display-message -p -F \\#{automatic-rename}")
+    let g:tmux_title_was_auto = substitute(g:tmux_title_was_auto, '[\n\r]*$', '', '')
+    if g:tmux_title_was_auto == "0"
+      let g:tmux_last_window_name = system("tmux display-message -p -F \\#W")
+      let g:tmux_last_window_name = substitute(g:tmux_last_window_name, '[\n\r]*$', '', '')
+    endif
+
+    let g:tmux_nvim_window_id = system("tmux display-message -p -F \\#{window_id}")
+    let g:tmux_nvim_window_id = substitute(g:tmux_nvim_window_id, '[\n\r]*$', '', '')
+  endfunction
+
+  function s:TmuxRenameWindow(name)
+    call system("tmux rename-window -t " . g:tmux_nvim_window_id . " " . shellescape(a:name))
+  endfunction
+
+  function! s:RenameTmuxWindowOnFocusGained()
+    call s:TmuxGrabState()
+    call s:TmuxRenameWindow(expand("%:t"))
+  endfunction
+
+  function! s:RestoreTmuxWindowNameOnFocusLost()
+    if g:tmux_title_was_auto == "1"
+      " Keep the original behavior for automatic-rename
+      call system("tmux set-window-option automatic-rename")
+    elseif exists('g:tmux_last_window_name') && !empty(g:tmux_last_window_name)
+      call s:TmuxRenameWindow(g:tmux_last_window_name)
+      unlet g:tmux_last_window_name " Clear the variable after restoring
+    endif
+  endfunction
+
+  function! s:RenameTmuxWindowOnBufChanges()
+    if !exists('g:tmux_title_was_auto')
+      call s:TmuxGrabState()
+    endif
+
+    call s:TmuxRenameWindow(expand("%:t"))
+  endfunction
+
+  augroup tmux
+    " Rename window on FocusGained (and save old name)
+    autocmd FocusGained * call s:RenameTmuxWindowOnFocusGained()
+    autocmd BufEnter * call s:RenameTmuxWindowOnBufChanges()
+    " Restore old name and set automatic-rename on FocusLost/VimLeave
+    autocmd VimLeave,FocusLost * call s:RestoreTmuxWindowNameOnFocusLost()
+  augroup END
+endif
 
 "set t_ts=k
 "set t_fs=\
