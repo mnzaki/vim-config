@@ -11,7 +11,7 @@ exec 'source ~/.vim/profile/' . vim_profile . '.vim'
 
 " coc configuration moved to ide.vim profile
 
-source $MSH_DIR/vim/nested.vim
+"source $MSH_DIR/vim/nested.vim
 
 " vi compatiblility is LAME
 set nocompatible
@@ -142,6 +142,13 @@ autocmd BufEnter * let &titlestring = expand("%:~:h:t ") . "/" . expand("%:t")
 " but remove it when we leave..... don't be glitcheeehhhh
 "execute "set titleold=".getcwd()
 " thanks https://vi.stackexchange.com/a/17913
+augroup tmux
+  autocmd!
+  if exists('$TMUX')
+    autocmd BufReadPost,FileReadPost,BufNewFile,FocusGained * call system("tmux rename-window " . expand("%:t"))
+    autocmd VimLeave,FocusLost * call system("tmux set-window-option automatic-rename")
+  endif
+augroup END
 
 "set t_ts=k
 "set t_fs=\
