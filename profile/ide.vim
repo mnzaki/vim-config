@@ -315,3 +315,8 @@ cnoreabbrev AG Ack
 let g:prettier#config#semi = 'false'
 let g:prettier#config#singleQuote = 'true'
 " let g:prettier#config#config_precedence = 'cli-override'
+
+let g:vim_svelte_plugin_use_typescript = 1
+let g:vim_svelte_plugin_use_sass = 1
+let g:vim_svelte_plugin_use_foldexpr = 1
+"let g:vim_svelte_plugin_open_devdocs = "F1" " that's the default
