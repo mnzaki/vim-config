@@ -4,6 +4,8 @@ let mapleader = ";"
 " map <localLeader> to ,
 let maplocalleader = ","
 
+let g:tmux_navigator_no_mappings = 1
+
 " Plugins plugins plugins: moved to profile scripts
 
 let vim_profile = $VIM_PROFILE != '' ? $VIM_PROFILE : 'ide'
@@ -199,6 +201,15 @@ if exists('$TMUX')
     " Restore old name and set automatic-rename on FocusLost/VimLeave
     autocmd VimLeave,FocusLost * call s:RestoreTmuxWindowNameOnFocusLost()
   augroup END
+
+  noremap <silent> <C-h> :<C-U>TmuxNavigateLeft<cr>
+  noremap <silent> <C-j> :<C-U>TmuxNavigateDown<cr>
+  noremap <silent> <C-k> :<C-U>TmuxNavigateUp<cr>
+  noremap <silent> <C-l> :<C-U>TmuxNavigateRight<cr>
+  let g:tmux_navigator_no_dynamic_title = 1
+  " let g:tmux_navigator_save_on_switch = 1
+  " let g:tmux_navigator_disable_when_zoomed = 1
+  " let g:tmux_navigator_preserve_zoom = 1
 endif
 
 "set t_ts=k
