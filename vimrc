@@ -208,8 +208,8 @@ if exists('$TMUX')
   noremap <silent> <C-l> :<C-U>TmuxNavigateRight<cr>
   let g:tmux_navigator_no_dynamic_title = 1
   " let g:tmux_navigator_save_on_switch = 1
-  " let g:tmux_navigator_disable_when_zoomed = 1
-  " let g:tmux_navigator_preserve_zoom = 1
+  let g:tmux_navigator_disable_when_zoomed = 0
+  let g:tmux_navigator_preserve_zoom = 1
 endif
 
 "set t_ts=k
